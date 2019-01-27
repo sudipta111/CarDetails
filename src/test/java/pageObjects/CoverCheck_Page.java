@@ -29,4 +29,11 @@ public class CoverCheck_Page {
 		return element;
 
 	}
+	public WebElement ele_ErroRequired(WebDriver driver) {
+
+		element = driver.findElement(By.className("error-required"));
+
+		return element;
+
+	}
 }

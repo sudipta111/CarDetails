@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="5" failures="0" name="env.TestRunner" time="0.036" errors="0" skipped="0">
+<testsuite tests="20" failures="0" name="env.TestRunner" time="0.919" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_172.jdk/Contents/Home/jre/lib"/>
@@ -27,7 +27,7 @@
 "/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="os.name" value="Mac OS X"/>
-    <property name="classworlds.conf" value="/Users/manaschatterjee/eclipse-workspace/.metadata/.plugins/org.eclipse.m2e.launching/launches/m2conf9130467007644064706.tmp"/>
+    <property name="classworlds.conf" value="/Users/manaschatterjee/eclipse-workspace/.metadata/.plugins/org.eclipse.m2e.launching/launches/m2conf4565082789397280948.tmp"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
     <property name="java.library.path" value="/Users/manaschatterjee/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
@@ -63,9 +63,24 @@
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="Scenario: I can search for car details in website" name="Given I am in the website" time="0.036"/>
-  <testcase classname="Scenario: I can search for car details in website" name="When I enter carNo &quot;OV12UYY&quot;" time="0"/>
-  <testcase classname="Scenario: I can search for car details in website" name="And click find vehicle" time="0"/>
-  <testcase classname="Scenario: I can search for car details in website" name="Then I should see the search results" time="0"/>
-  <testcase classname="Scenario: I can search for car details in website" name="Scenario: I can search for car details in website" time="0"/>
+  <testcase classname="Scenario: I can search for existing car details in website" name="Given I am in the website" time="0.043"/>
+  <testcase classname="Scenario: I can search for existing car details in website" name="When I enter carNo &quot;OV12UYY&quot;" time="0"/>
+  <testcase classname="Scenario: I can search for existing car details in website" name="And click find vehicle" time="0"/>
+  <testcase classname="Scenario: I can search for existing car details in website" name="Then I should see the search results" time="0"/>
+  <testcase classname="Scenario: I can search for existing car details in website" name="Scenario: I can search for existing car details in website" time="0.24"/>
+  <testcase classname="Scenario: Searching for non existing car details in website" name="Given I am in the website" time="0.002"/>
+  <testcase classname="Scenario: Searching for non existing car details in website" name="When I enter carNo &quot;abc&quot;" time="0.001"/>
+  <testcase classname="Scenario: Searching for non existing car details in website" name="And click find vehicle" time="0"/>
+  <testcase classname="Scenario: Searching for non existing car details in website" name="Then I should see the message &quot;Sorry record not found&quot;" time="0"/>
+  <testcase classname="Scenario: Searching for non existing car details in website" name="Scenario: Searching for non existing car details in website" time="0.304"/>
+  <testcase classname="Scenario: Searching for invalid car no in website" name="Given I am in the website" time="0"/>
+  <testcase classname="Scenario: Searching for invalid car no in website" name="When I enter carNo &quot;a!!€€&quot;" time="0"/>
+  <testcase classname="Scenario: Searching for invalid car no in website" name="And click find vehicle" time="0"/>
+  <testcase classname="Scenario: Searching for invalid car no in website" name="Then I should see the error message &quot;Please enter a valid car registration&quot;" time="0"/>
+  <testcase classname="Scenario: Searching for invalid car no in website" name="Scenario: Searching for invalid car no in website" time="0.232"/>
+  <testcase classname="Scenario: Searching for blank car no in website" name="Given I am in the website" time="0"/>
+  <testcase classname="Scenario: Searching for blank car no in website" name="When I enter carNo &quot; &quot;" time="0"/>
+  <testcase classname="Scenario: Searching for blank car no in website" name="And click find vehicle" time="0"/>
+  <testcase classname="Scenario: Searching for blank car no in website" name="Then I should see the error message &quot;Please enter a valid car registration&quot;" time="0"/>
+  <testcase classname="Scenario: Searching for blank car no in website" name="Scenario: Searching for blank car no in website" time="0.097"/>
 </testsuite>
