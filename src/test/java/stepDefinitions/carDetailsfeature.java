@@ -23,7 +23,6 @@ public class carDetailsfeature {
 		System.setProperty("webdriver.chrome.driver", "Lib//chromedriver");
 		driver = new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-
 		//logger.info("browser starting");
 	}
 
@@ -33,47 +32,43 @@ public class carDetailsfeature {
 	}
 	
 	@Given("^I am in the website$")
-	public void i_am_in_the_website() throws Throwable {
-	    
+	public void i_am_in_the_website() throws Throwable {    
 		driver.get("https://covercheck.vwfsinsuranceportal.co.uk/");
 	}
 	
 	@When("^I enter carNo \"([^\"]*)\"$")
-	public void i_enter_carNo(String arg1) throws Throwable {
-	   
+	public void i_enter_carNo(String arg1) throws Throwable {	   
 		CoverCheck_Page coverP = new CoverCheck_Page();
-		coverP.txtbx_CarRegNo(driver).sendKeys(arg1);
-		
+		coverP.txtbx_CarRegNo(driver).sendKeys(arg1);		
 	}
-
 	@When("^click find vehicle$")
-	public void click_find_vehicle() throws Throwable {
-	    
+	public void click_find_vehicle() throws Throwable {    
 		CoverCheck_Page coverP = new CoverCheck_Page();
 		coverP.btn_FindVehicle(driver).click();
 	}
-	
+	@Then("^I should see \"([^\"]*)\" as cover start date in the search results$")
+	public void i_should_see_as_cover_start_date_in_the_search_results(String arg1) throws Throwable {
+		CoverCheck_Page coverP = new CoverCheck_Page();
+		if (coverP.ele_Result(driver).isDisplayed()) {
+			assertTrue(coverP.ele_CoverSt(driver).getText().contains(arg1));
+		}
+	}
 	@Then("^I should see the search results$")
-	public void i_should_see_the_search_results() throws Throwable {
-	    
+	public void i_should_see_the_search_results() throws Throwable {    
 		CoverCheck_Page coverP = new CoverCheck_Page();
 		if (coverP.ele_Result(driver).isDisplayed()) {
 			assertTrue(coverP.ele_Result(driver).isDisplayed());
 		}
-		}
+	}
 	@Then("^I should see the message \"([^\"]*)\"$")
-	public void i_should_see_the_message(String arg1) throws Throwable {
-		
+	public void i_should_see_the_message(String arg1) throws Throwable {	
 		CoverCheck_Page coverP = new CoverCheck_Page();
 		if (coverP.ele_Result(driver).isDisplayed()) {
 			assertTrue(coverP.ele_Result(driver).getText().equalsIgnoreCase(arg1));
 		}
-
 	}
-
 	@Then("^I should see the error message \"([^\"]*)\"$")
-	public void i_should_see_the_error_message(String arg1) throws Throwable {
-	    
+	public void i_should_see_the_error_message(String arg1) throws Throwable {    
 		CoverCheck_Page coverP = new CoverCheck_Page();
 		if (coverP.ele_ErroRequired(driver).isDisplayed()) {
 			assertTrue(coverP.ele_ErroRequired(driver).getText().equalsIgnoreCase(arg1));

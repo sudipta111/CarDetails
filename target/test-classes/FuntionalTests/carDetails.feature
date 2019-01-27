@@ -5,7 +5,7 @@ Scenario: I can search for existing car details in website
  Given I am in the website
  When I enter carNo "OV12UYY"
  And click find vehicle
- Then I should see the search results
+ Then I should see "09 FEB 2022" as cover start date in the search results
  
  Scenario: Searching for non existing car details in website
 
