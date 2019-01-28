@@ -24,7 +24,14 @@ Scenario: Searching for invalid car no in website
  Scenario: Searching for blank car no in website
 
  Given I am in the website
- When I enter carNo " "
+ When I enter carNo ""
+ And click find vehicle
+ Then I should see the error message "Please enter a valid car registration"
+ 
+ Scenario: Searching for  car no  with spaces only in website
+
+ Given I am in the website
+ When I enter carNo "  "
  And click find vehicle
  Then I should see the error message "Please enter a valid car registration"
  
